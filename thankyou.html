@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Roaming Soul</title>
+    <link rel="stylesheet" href="thankyou.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-content">
+            <!-- Success Animation -->
+            <div class="success-animation">
+                <div class="checkmark-container">
+                    <div class="checkmark">
+                        <div class="checkmark-circle"></div>
+                        <div class="checkmark-stem"></div>
+                        <div class="checkmark-kick"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thank You Message -->
+            <div class="message-content">
+                <h1 class="thank-you-title">Thank You!</h1>
+                <p class="thank-you-subtitle">Your adventure journey starts here</p>
+                
+                <div class="success-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">📧</span>
+                        <span class="detail-text">We've received your message</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">⏱️</span>
+                        <span class="detail-text">We'll respond within 24 hours</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎒</span>
+                        <span class="detail-text">Get ready for your adventure!</span>
+                    </div>
+                </div>
+                
+                <div class="motivational-quote">
+                    <blockquote>
+                        "Adventure is worthwhile in itself."
+                        <cite>- Amelia Earhart</cite>
+                    </blockquote>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <a href="index.html" class="btn btn-primary">
+                        <span class="btn-icon">🏠</span>
+                        Back to Home
+                    </a>
+                    <a href="index.html#adventures" class="btn btn-secondary">
+                        <span class="btn-icon">🏔️</span>
+                        Explore Adventures
+                    </a>
+                </div>
+                
+                <!-- Social Media Links -->
+                <div class="social-follow">
+                    <p>Follow us for adventure updates:</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon facebook">📘</a>
+                        <a href="#" class="social-icon instagram">📸</a>
+                        <a href="#" class="social-icon twitter">🐦</a>
+                        <a href="#" class="social-icon youtube">📺</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-element" style="--delay: 0s;">🏔️</div>
+            <div class="floating-element" style="--delay: 2s;">🌟</div>
+            <div class="floating-element" style="--delay: 4s;">🦅</div>
+            <div class="floating-element" style="--delay: 1s;">☁️</div>
+            <div class="floating-element" style="--delay: 3s;">🌲</div>
+            <div class="floating-element" style="--delay: 5s;">⛰️</div>
+        </div>
+        
+        <!-- Particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+    
+    <!-- Auto redirect script -->
+    <script>
+        // Add entrance animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.thank-you-content > *');
+            elements.forEach((element, index) => {
+                element.style.animationDelay = (index * 0.2) + 's';
+                element.classList.add('fade-in-up');
+            });
+            
+            // Start checkmark animation
+            setTimeout(() => {
+                document.querySelector('.checkmark').classList.add('animate');
+            }, 500);
+            
+            // Add counter for auto-redirect (optional)
+            // Uncomment if you want auto-redirect after 10 seconds
+            /*
+            let countdown = 10;
+            const redirectElement = document.createElement('div');
+            redirectElement.className = 'redirect-countdown';
+            redirectElement.innerHTML = `Redirecting to home in <span id="countdown">${countdown}</span> seconds...`;
+            document.querySelector('.action-buttons').appendChild(redirectElement);
+            
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                document.getElementById('countdown').textContent = countdown;
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = 'index.html';
+                }
+            }, 1000);
+            */
+        });
+        
+        // Add particle animation
+        function createParticle() {
+            const particles = document.querySelector('.particles');
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            particles.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 4000);
+        }
+        
+        // Create particles periodically
+        setInterval(createParticle, 300);
+    </script>
+</body>
+</html>
